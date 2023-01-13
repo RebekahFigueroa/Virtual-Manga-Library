@@ -15,7 +15,7 @@ const renderSearchResults = () => {
 		const mangaTitle = document.createElement("h3");
 		mangaTitle.innerHTML = searchResult.title;
 
-		// add type
+		// add type - example: manga or light novel
 		const mangaType = document.createElement("h4");
 		mangaType.innerHTML = searchResult.type;
 
