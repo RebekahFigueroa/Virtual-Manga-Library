@@ -1,0 +1,33 @@
+/* User profile */
+#user-profile-container {
+}
+/* Add manga to library search */
+#cards-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	row-gap: 1rem;
+	column-gap: 2rem;
+	margin-top: 2rem;
+}
+
+.manga-image {
+	width: 100%;
+}
+
+.manga-card {
+	border: 1px solid black;
+	border-radius: 1rem;
+	padding: 2rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.add-button {
+	float: bottom;
+}
+
+.manga-card-hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
