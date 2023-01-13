@@ -2,22 +2,22 @@
 const renderSearchResults = () => {
 	const cardsContainer = document.getElementById("cards-container");
 	cardsContainer.innerHTML = "";
-	searchResults.forEach((datum) => {
-		console.log(datum);
+	searchResults.forEach((searchResult) => {
+		console.log(searchResult);
 		//create card
 		const cardWithMangaInfo = document.createElement("div");
 		cardWithMangaInfo.classList.add("manga-card");
 		// add image
 		const mangaImg = document.createElement("img");
 		mangaImg.classList.add("manga-image");
-		mangaImg.src = datum.images.jpg.image_url;
+		mangaImg.src = searchResult.images.jpg.image_url;
 		//Add title (english)
 		const mangaTitle = document.createElement("h3");
-		mangaTitle.innerHTML = datum.title;
+		mangaTitle.innerHTML = searchResult.title;
 
 		// add type
 		const mangaType = document.createElement("h4");
-		mangaType.innerHTML = datum.type;
+		mangaType.innerHTML = searchResult.type;
 
 		// Add 'add to library' button
 		const addToLibraryBtn = document.createElement("button");
@@ -57,8 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		fetch(`https://api.jikan.moe/v4/manga?q=${searchBarInput.value}&sfw`)
 			.then((response) => response.json())
 			.then((json) => {
+				//store search results for later to re-render with toggle
 				searchResults = json.data;
 				renderSearchResults();
 			});
 	});
 });
+
+const functionThatUsesCallback = (callback) => {
+	callback();
+};
