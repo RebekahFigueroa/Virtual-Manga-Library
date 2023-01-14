@@ -63,7 +63,3 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 	});
 });
-
-const functionThatUsesCallback = (callback) => {
-	callback();
-};

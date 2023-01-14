@@ -1,9 +1,11 @@
 /* User profile/ header*/
 #user-profile-container {
+	background-color: lightcyan;
 }
 
 /* search bar */
 #search-bar-container {
+	background-color: lightpink;
 }
 
 /* Add manga to library render results (aka cards container) */
@@ -34,6 +36,20 @@
 
 .add-button {
 	float: bottom;
+	border-radius: 12px;
+	background-color: pink;
+	border: 1px solid black;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	width: 100%;
+}
+
+.add-button:hover {
+	background-color: lightgreen;
 }
 
 .manga-card-hover {
