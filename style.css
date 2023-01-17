@@ -14,7 +14,7 @@
 }
 
 #search-bar-text {
-  color: white;
+  color: #ffefef;
   font-size: 24px;
 }
 
@@ -22,7 +22,7 @@
   position: relative;
   width: 30rem;
   height: 2.5rem;
-  background-color: white;
+  background-color: #ffefef;
   border: none;
   border-radius: 5rem;
 }
@@ -31,7 +31,8 @@
   position: relative;
   width: 6rem;
   height: 2.5rem;
-  background-color: white;
+  background-color: #ffefef;
+  color: #7c99ac;
   border: none;
   border-radius: 5rem;
   margin-left: 1rem;
@@ -43,7 +44,8 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   row-gap: 1rem;
   column-gap: 2rem;
-  margin: 2rem 3rem;
+  padding: 2rem 3rem;
+  background-color: #7c99ac;
 }
 
 .manga-image {
@@ -51,7 +53,7 @@
 }
 
 .manga-card {
-  border: 1px solid black;
+  border: 1px solid #ffefef;
   border-radius: 1rem;
   padding: 2rem;
   display: flex;
@@ -61,14 +63,16 @@
   transition: top ease 0.5s;
   position: relative;
   top: 0;
+  background-color: #ffefef;
+  color: #7c99ac;
 }
 
 .add-button {
   float: bottom;
   border-radius: 12px;
-  background-color: pink;
-  border: 1px solid black;
-  color: black;
+  background-color: #7c99ac;
+  border: 1px solid #7c99ac;
+  color: #ffefef;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -78,10 +82,13 @@
 }
 
 .add-button:hover {
-  background-color: lightgreen;
+  background-color: #92a9bd;
+  border: 1px solid #92a9bd;
+  color: black;
+  cursor: pointer;
 }
 
 .manga-card-hover {
-  box-shadow: 5px 8px 10px 0 rgba(33, 33, 33, 0.2);
+  box-shadow: 5px 8px 10px 0 rgba(33, 33, 33, 0.3);
   top: -10px;
 }
