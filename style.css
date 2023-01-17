@@ -1,58 +1,87 @@
 /* User profile/ header*/
 #user-profile-container {
-	background-color: lightcyan;
+  background-color: #92a9bd;
+  padding: 1rem;
 }
 
 /* search bar */
 #search-bar-container {
-	background-color: lightpink;
+  background-color: #7c99ac;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10rem;
+}
+
+#search-bar-text {
+  color: white;
+  font-size: 24px;
+}
+
+#search-bar {
+  position: relative;
+  width: 30rem;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  border-radius: 5rem;
+}
+
+#search-bar-submit-btn {
+  position: relative;
+  width: 6rem;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  border-radius: 5rem;
+  margin-left: 1rem;
 }
 
 /* Add manga to library render results (aka cards container) */
 #cards-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	row-gap: 1rem;
-	column-gap: 2rem;
-	margin: 2rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 2rem;
+  margin: 2rem 3rem;
 }
 
 .manga-image {
-	width: 100%;
+  width: 100%;
 }
 
 .manga-card {
-	border: 1px solid black;
-	border-radius: 1rem;
-	padding: 2rem;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
-	transition: top ease 0.5s;
-	position: relative;
-	top: 0;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: top ease 0.5s;
+  position: relative;
+  top: 0;
 }
 
 .add-button {
-	float: bottom;
-	border-radius: 12px;
-	background-color: pink;
-	border: 1px solid black;
-	color: black;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	width: 100%;
+  float: bottom;
+  border-radius: 12px;
+  background-color: pink;
+  border: 1px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100%;
 }
 
 .add-button:hover {
-	background-color: lightgreen;
+  background-color: lightgreen;
 }
 
 .manga-card-hover {
-	box-shadow: 5px 8px 10px 0 rgba(33, 33, 33, 0.2);
-	top: -10px;
+  box-shadow: 5px 8px 10px 0 rgba(33, 33, 33, 0.2);
+  top: -10px;
 }
