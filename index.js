@@ -14,8 +14,10 @@ const createUserProfile = (userProfile) => {
   //
 
   //adds profile link
-  const profileLink = document.createElement("h4");
-  profileLink.innerHTML = "Check out myAnimeList! (will update to link later)";
+  const profileLink = document.createElement("a");
+  profileLink.style.display = "block";
+  profileLink.setAttribute("href", userProfile.data.url);
+  profileLink.innerHTML = "Check out myAnimeList!";
 
   // get a recommendation
   const recommendationSection = document.createElement("div");
@@ -25,15 +27,14 @@ const createUserProfile = (userProfile) => {
   const recommendationButton = document.createElement("button");
   recommendationButton.innerHTML = "Get Recommendation";
 
-  recommendationSection.appendChild(recommendationBlurb);
-  recommendationSection.appendChild(recommendationButton);
-
   //append
   profileContainer.appendChild(welcomeBanner);
   profileContainer.appendChild(userProfileSection);
+  profileContainer.appendChild(recommendationSection);
   userProfileSection.appendChild(profilePicture);
   userProfileSection.appendChild(profileLink);
-  profileContainer.appendChild(recommendationSection);
+  recommendationSection.appendChild(recommendationBlurb);
+  recommendationSection.appendChild(recommendationButton);
 };
 
 // create card for search
