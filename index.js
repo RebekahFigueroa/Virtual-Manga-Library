@@ -33,6 +33,14 @@ const createUserProfile = (userProfile) => {
       .then((response) => response.json())
       .then((json) => {
         console.log(json);
+        const recommendationPicture = document.createElement("img");
+        recommendationPicture.src = json.data.images.jpg.image_url;
+
+        const recommendationTitle = document.createElement("h3");
+        recommendationTitle.innerHTML = json.data.title;
+
+        recommendationSection.appendChild(recommendationPicture);
+        recommendationSection.appendChild(recommendationTitle);
       });
   });
 
