@@ -4,8 +4,10 @@
 const createUserProfile = (userProfile) => {
   const profileContainer = document.getElementById("user-profile-container");
   const userProfileSection = document.createElement("div");
+  userProfileSection.classList.add("user-profile-section");
 
   const welcomeBanner = document.createElement("h1");
+  welcomeBanner.classList.add("welcome-banner");
   welcomeBanner.innerHTML = `Welcome to ${userProfile.data.username}'s Virtual Manga Shelf!`;
 
   //adds profile picture
@@ -21,6 +23,7 @@ const createUserProfile = (userProfile) => {
 
   // get a recommendation
   const recommendationSection = document.createElement("div");
+  recommendationSection.classList.add("recommendation-section");
   const recommendationBlurb = document.createElement("h4");
   recommendationBlurb.innerHTML = "Looking for a recommendation? Click below";
 

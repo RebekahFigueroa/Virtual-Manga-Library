@@ -2,6 +2,24 @@
 #user-profile-container {
   background-color: #92a9bd;
   padding: 1rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar recommendation";
+}
+
+.welcome-banner {
+  grid-area: header;
+}
+
+.user-profile-section {
+  grid-area: sidebar;
+}
+
+.recommendation-section {
+  grid-area: recommendation;
 }
 
 /* search bar */
