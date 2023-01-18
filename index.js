@@ -1,5 +1,4 @@
 // helper functions
-
 //pull user profile
 const createUserProfile = (userProfile) => {
   const profileContainer = document.getElementById("user-profile-container");
@@ -29,6 +28,13 @@ const createUserProfile = (userProfile) => {
 
   const recommendationButton = document.createElement("button");
   recommendationButton.innerHTML = "Get Recommendation";
+  recommendationButton.addEventListener("click", () => {
+    fetch("https://api.jikan.moe/v4/random/manga")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+      });
+  });
 
   //append
   profileContainer.appendChild(welcomeBanner);
