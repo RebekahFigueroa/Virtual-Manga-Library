@@ -1,0 +1,28 @@
+{
+  "manga": [
+    {
+      "mal_id": 107562,
+      "title-english": "The Apothecary Diaries",
+      "image": "https://cdn.myanimelist.net/images/manga/3/201154.jpg",
+      "volumes-library": 6,
+      "read-status": true,
+      "library-score": 8
+    },
+    {
+      "mal_id": 4571,
+      "title-english": "Snow White with the Red Hair",
+      "image": "https://cdn.myanimelist.net/images/manga/2/258717.jpg",
+      "volumes-library": 1,
+      "read-status": false,
+      "library-score": null
+    },
+    {
+      "mal_id": 119161,
+      "title-english": "Spy x Family",
+      "image": "https://cdn.myanimelist.net/images/manga/3/219741.jpg",
+      "volumes-library": 8,
+      "read-status": true,
+      "library-score": 8
+    }
+  ]
+}
