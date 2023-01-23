@@ -54,6 +54,24 @@
   background-color: #7c99ac;
 }
 
+.manga-library-image {
+  width: 100%;
+}
+
+.manga-library-card {
+  border: 1px solid #ffefef;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: top ease 0.5s;
+  position: relative;
+  top: 0;
+  background-color: #ffefef;
+  color: #7c99ac;
+}
+
 /* search bar */
 #search-content-container {
   display: none;

@@ -140,19 +140,60 @@ const mangaLibrary = () => {
 
         //create card (render results in local db first incase you are offline)
         const cardWithMangaInfo = document.createElement("div");
-        cardWithMangaInfo.classList.add("manga-card");
+        cardWithMangaInfo.classList.add("manga-library-card");
         // add image
         const mangaImg = document.createElement("img");
-        mangaImg.classList.add("manga-image");
+        mangaImg.classList.add("manga-library-image");
         mangaImg.src = mangaResult.image;
         //Add title (english)
         const mangaTitle = document.createElement("h3");
+        mangaTitle.style.textAlign = "center";
         mangaTitle.innerHTML = mangaResult["title-english"];
+        //Add authors
+        const mangaAuthors = document.createElement("div");
+        mangaAuthors.innerHTML =
+          '<span style="font-weight:700;">Authors:</span> ' +
+          mangaResult.authors.join(" - ");
+        //Add published info
+        const mangaPublished = document.createElement("div");
+        mangaPublished.innerHTML =
+          '<span style="font-weight:700;">Published:</span> ' +
+          mangaResult.published;
+        // Add demographics
+        const mangaDemographics = document.createElement("div");
+        mangaDemographics.innerHTML =
+          '<span style="font-weight:700;">Demographic:</span> ' +
+          mangaResult.demographic.join(", ");
+        //Add themes
+        const mangaThemes = document.createElement("div");
+        mangaThemes.innerHTML =
+          '<span style="font-weight:700;">Themes:</span> ' +
+          mangaResult.themes.join(", ");
+        //Add genres
+        const mangaGenres = document.createElement("div");
+        mangaGenres.innerHTML =
+          '<span style="font-weight:700;">Genres:</span> ' +
+          mangaResult.genres.join(", ");
 
         //Append to card + card container
         mangaLibraryContainer.appendChild(cardWithMangaInfo);
         cardWithMangaInfo.appendChild(mangaImg);
         cardWithMangaInfo.appendChild(mangaTitle);
+        cardWithMangaInfo.appendChild(mangaAuthors);
+        cardWithMangaInfo.appendChild(mangaPublished);
+        cardWithMangaInfo.appendChild(mangaThemes);
+        cardWithMangaInfo.appendChild(mangaDemographics);
+        cardWithMangaInfo.appendChild(mangaGenres);
+
+        //add hover effect
+        cardWithMangaInfo.addEventListener("mouseover", () => {
+          cardWithMangaInfo.classList.add("manga-card-hover");
+        });
+
+        //remove hover effect
+        cardWithMangaInfo.addEventListener("mouseout", () => {
+          cardWithMangaInfo.classList.remove("manga-card-hover");
+        });
       });
     });
 
