@@ -7,20 +7,20 @@ const createUserProfile = (userProfile) => {
 
   const welcomeBanner = document.createElement("h1");
   welcomeBanner.classList.add("welcome-banner");
-  welcomeBanner.innerHTML = `Welcome to ${userProfile.data.username}'s Virtual Manga Shelf!`;
+  welcomeBanner.innerHTML = `Welcome to My Virtual Manga Shelf!`;
 
-  //adds profile picture
+  //adds profile picture (not using for now until I can add more interactivity with mal profile)
   const profilePicture = document.createElement("img");
   profilePicture.src = userProfile.data.images.jpg.image_url;
   //
 
-  //adds profile link
+  //adds profile link (not using for now until I can add more interactivity with mal profile)
   const profileLink = document.createElement("a");
   profileLink.style.display = "block";
   profileLink.setAttribute("href", userProfile.data.url);
   profileLink.innerHTML = "Check out myAnimeList!";
 
-  // get a recommendation
+  // get a recommendation (not using for now because I need to figure out nsfw filter)
   const recommendationSection = document.createElement("div");
   recommendationSection.classList.add("recommendation-section");
   const recommendationBlurb = document.createElement("h4");
@@ -32,7 +32,6 @@ const createUserProfile = (userProfile) => {
     fetch("https://api.jikan.moe/v4/random/manga")
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         const recommendationPicture = document.createElement("img");
         recommendationPicture.src = json.data.images.jpg.image_url;
 
@@ -46,12 +45,12 @@ const createUserProfile = (userProfile) => {
 
   //append
   profileContainer.appendChild(welcomeBanner);
-  profileContainer.appendChild(userProfileSection);
-  profileContainer.appendChild(recommendationSection);
-  userProfileSection.appendChild(profilePicture);
-  userProfileSection.appendChild(profileLink);
-  recommendationSection.appendChild(recommendationBlurb);
-  recommendationSection.appendChild(recommendationButton);
+  //   profileContainer.appendChild(userProfileSection);
+  //   profileContainer.appendChild(recommendationSection);
+  //   userProfileSection.appendChild(profilePicture);
+  //   userProfileSection.appendChild(profileLink);
+  //   recommendationSection.appendChild(recommendationBlurb);
+  //   recommendationSection.appendChild(recommendationButton);
 };
 
 // create card for search
@@ -59,7 +58,6 @@ const renderSearchResults = () => {
   const cardsContainer = document.getElementById("search-cards-container");
   cardsContainer.innerHTML = "";
   searchResults.forEach((searchResult) => {
-    console.log(searchResult);
     //create card
     const cardWithMangaInfo = document.createElement("div");
     cardWithMangaInfo.classList.add("manga-card");
@@ -81,7 +79,6 @@ const renderSearchResults = () => {
     addToLibraryBtn.classList.add("add-button");
     // add manga search button behavior to add to library
     addToLibraryBtn.addEventListener("click", () => {
-      console.log(searchResult);
       fetch(`http://localhost:3000/manga`, {
         method: "POST",
         body: JSON.stringify({
@@ -139,11 +136,8 @@ const mangaLibrary = () => {
   fetch(`http://localhost:3000/manga`)
     .then((response) => response.json())
     .then((mangaResults) => {
-      console.log(mangaResults);
       // for each result in manga library, make a card
       mangaResults.forEach((mangaResult) => {
-        console.log(mangaResult);
-
         //create card (render results in local db first incase you are offline)
         const cardWithMangaInfo = document.createElement("div");
         cardWithMangaInfo.classList.add("manga-library-card");
@@ -164,7 +158,11 @@ const mangaLibrary = () => {
         const mangaPublished = document.createElement("div");
         mangaPublished.innerHTML =
           '<span style="font-weight:700;">Published:</span> ' +
-          mangaResult.published;
+          mangaResult.publishing;
+        //Add type info
+        const mangaType = document.createElement("div");
+        mangaType.innerHTML =
+          '<span style="font-weight:700;">Type:</span> ' + mangaResult.type;
         // Add demographics
         const mangaDemographics = document.createElement("div");
         mangaDemographics.innerHTML =
@@ -187,6 +185,7 @@ const mangaLibrary = () => {
         cardWithMangaInfo.appendChild(mangaTitle);
         cardWithMangaInfo.appendChild(mangaAuthors);
         cardWithMangaInfo.appendChild(mangaPublished);
+        cardWithMangaInfo.appendChild(mangaType);
         cardWithMangaInfo.appendChild(mangaThemes);
         cardWithMangaInfo.appendChild(mangaDemographics);
         cardWithMangaInfo.appendChild(mangaGenres);
@@ -218,6 +217,7 @@ const tabToggle = () => {
     searchContainer.style.display = "none";
     mangaLibraryTab.style.backgroundColor = "#ffefef";
     searchTab.style.backgroundColor = "#d3dedc";
+    mangaLibrary();
   });
 
   searchTab.addEventListener("click", () => {
@@ -225,7 +225,6 @@ const tabToggle = () => {
     searchContainer.style.display = "grid";
     mangaLibraryTab.style.backgroundColor = "#d3dedc";
     searchTab.style.backgroundColor = "#ffefef";
-    mangaLibrary();
   });
 };
 

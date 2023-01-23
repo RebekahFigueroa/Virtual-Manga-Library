@@ -12,6 +12,10 @@
 
 .welcome-banner {
   grid-area: header;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffefef;
 }
 
 .user-profile-section {

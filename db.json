@@ -17,8 +17,8 @@
       "genres": [
         "Drama"
       ],
-      "publishing": true,
-      "published": "May 25, 2017 to ?",
+      "publishing": "May 25, 2017 to ?",
+      "published": true,
       "themes": [
         "Historical",
         "Medical"
@@ -45,8 +45,8 @@
         "Fantasy",
         "Romance"
       ],
-      "publishing": true,
-      "published": "Aug 10, 2006 to ? ",
+      "publishing": "Aug 10, 2006 to ? ",
+      "published": true,
       "themes": [],
       "synopsis": "Shirayuki is Tanbarun's friendly neighborhood herbalist, whose unique red hair ends up drawing unwanted attention from the vain prince of Tanbarun, Raji Shenazard. Faced with the unattractive proposition to become his concubine, Shirayuki chops off her hair and flees the country overnight. In her journey deep into the forest, she encounters Zen Wistalia, the prince of the neighboring country of Clarines. When Zen takes a bite out of a poisoned apple that Prince Raji sends in order to recapture Shirayuki, she expertly uses the herbs at her disposal to cure him. Together with Zen and his two friends, Kiki and Mitsuhide, Shirayuki travels to Clarines, where she aims to make a life for herself as an apothecary of the royal court. As Zen slowly begins to mean more to her than the prince of her new country, the two of them must learn to work together toward their respective dreams despite the difference in status. [Written by MAL Rewrite] Included one-shots: Volume 1: Hachigatsu no Shikisai (Four-season Color of August) Volume 2: Bokura wo Tsunaide. (Bind Us)",
       "volumesLibrary": 1,
@@ -69,8 +69,8 @@
         "Action",
         "Comedy"
       ],
-      "publishing": true,
-      "published": "Mar 25, 2019 to ?",
+      "publishing": "Mar 25, 2019 to ?",
+      "published": true,
       "themes": [
         "Childcare"
       ],
@@ -104,6 +104,107 @@
       "readStatus": null,
       "libraryScore": null,
       "id": 4
+    },
+    {
+      "mal_id": 126146,
+      "titleEnglish": "[Oshi No Ko]",
+      "image": "https://cdn.myanimelist.net/images/manga/3/233991.jpg",
+      "authors": [
+        "Akasaka, Aka",
+        "Yokoyari, Mengo"
+      ],
+      "type": "Manga",
+      "demographic": [
+        "Seinen"
+      ],
+      "genres": [
+        "Drama",
+        "Supernatural"
+      ],
+      "publishing": "Apr 23, 2020 to ?",
+      "published": true,
+      "themes": [
+        "Music",
+        "Reincarnation"
+      ],
+      "synopsis": "Sixteen-year-old Ai Hoshino is a talented and beautiful idol who is adored by her fans. She is the personification of a pure, young maiden. But all that glitters is not gold. Gorou Amemiya is a countryside gynecologist and a big fan of Ai. So when the pregnant idol shows up at his hospital, he is beyond bewildered. Gorou promises her a safe delivery. Little does he know, an encounter with a mysterious figure would result in his untimely death—or so he thought. Opening his eyes in the lap of his beloved idol, Gorou finds that he has been reborn as Aquamarine Hoshino—Ai's newborn son! With his world turned upside down, Gorou soon learns that the world of showbiz is paved with thorns, where talent does not always beget success. Will he manage to protect Ai's smile that he loves so much with the help of an eccentric and unexpected ally? [Written by MAL Rewrite]",
+      "volumesLibrary": null,
+      "readStatus": null,
+      "libraryScore": null,
+      "id": 5
+    },
+    {
+      "mal_id": 143370,
+      "titleEnglish": "The Dragon Knight's Beloved",
+      "image": "https://cdn.myanimelist.net/images/manga/3/254862.jpg",
+      "authors": [
+        "Aozaki, Ritsu",
+        "Orikawa, Asagi"
+      ],
+      "type": "Manga",
+      "demographic": [
+        "Josei"
+      ],
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "publishing": "Jan 28, 2019 to ?",
+      "published": true,
+      "themes": [],
+      "synopsis": "A young woman begins a new life as a dragon master for a handsome earl in this tale of high fantasy romance. Melissa is a maid-in-training at the royal castle, where her greatest joy is caring for the majestic steeds of the royal Dragon Knights. Her coming-of-age ceremony is fast approaching, and with it comes the need to decide what path her future will take. Melissa shares a special bond of friendship with Commander Hubert, the handsome knight who rides the mightiest of dragons, but their relationship is about to get complicated. Newly returned from a dangerous mission, Hubert makes a shocking request: Would Melissa pretend to be his lover, and move to his country estate, where wild dragons roam? (Source: Seven Seas Entertainment)",
+      "volumesLibrary": null,
+      "readStatus": null,
+      "libraryScore": null,
+      "id": 6
+    },
+    {
+      "mal_id": 109073,
+      "titleEnglish": "The White Cat's Revenge as Plotted from the Dragon King's Lap",
+      "image": "https://cdn.myanimelist.net/images/manga/3/208595.jpg",
+      "authors": [
+        "Aki",
+        "Kureha"
+      ],
+      "type": "Manga",
+      "demographic": [],
+      "genres": [
+        "Fantasy"
+      ],
+      "publishing": "Aug 25, 2017 to ?",
+      "published": true,
+      "themes": [
+        "Isekai"
+      ],
+      "synopsis": "With her silky blonde hair and large blue eyes, Ruri Morikawa should have been the most beautiful and popular girl. However, she has never been quite so fortunate; her oblivious \"best friend\" Asahi Shinomiya has somehow always stolen the spotlight, causing others to detest the Ruri who Asahi cherishes. When they are summoned to another world, this cycle repeats once again, and Ruri is ultimately banished. Alone in the wilderness, Ruri stumbles upon a cottage in a neighboring kingdom. There, she learns that she is someone \"beloved by the spirits\": a person whose mere existence can shake countries to the core and instigate bloody wars. Along with the cute fairies that follow her wherever she goes, she gains a magic bracelet that can transform her into a fluffy white cat. Hoping to learn more about the world, Ruri travels to the capital and receives direct protection from the Dragon King Jade. The two begin to foster a close bond, even though he thinks that she is only a cat! As Ruri struggles with the lie she has fallen into, a war is brewing between the Dragon King's army and the one led by the figurehead Priestess Asahi. [Written by MAL Rewrite]",
+      "volumesLibrary": null,
+      "readStatus": null,
+      "libraryScore": null,
+      "id": 7
+    },
+    {
+      "mal_id": 132440,
+      "titleEnglish": "A Tale of the Secret Saint",
+      "image": "https://cdn.myanimelist.net/images/manga/3/239197.jpg",
+      "authors": [
+        "Aobe, Mahito",
+        "Touya"
+      ],
+      "type": "Manga",
+      "demographic": [],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
+      "publishing": "Dec 19, 2019 to ?",
+      "published": true,
+      "themes": [],
+      "synopsis": "Fia always dreamed of becoming a knight. Born into a family of knights, she's the least talented among them, but she still clutches to her hope and trains with everything she has. When the day comes for her to slay a small demon and prove her worth, she ends up face to face with a dragon instead! A deadly injury makes her life flash before her eyes... and she suddenly remembers her former life, when she was a powerful Saint in a bygone era who defeated the Demon King. That life ended in pain because of who she was, making her fear ever becoming a Saint again. Now that the magic from her previous life has been rekindled, she may become a more powerful knight than she ever dreamed–if only she can survive long enough! (Source: Seven Seas Entertainment)",
+      "volumesLibrary": null,
+      "readStatus": null,
+      "libraryScore": null,
+      "id": 8
     }
   ]
 }
