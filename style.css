@@ -24,16 +24,24 @@
 
 /* Tabs */
 #tab-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .btn-tabs {
   display: block;
-  width: 50%;
-  border: none;
+  width: 100%;
+  border: 1px solid #92a9bd;
   background-color: #d3dedc;
-  padding: 14px 28px;
-  font-size: 16px;
+  padding: 1rem 2.5rem;
+  font-size: 24px;
+  color: #92a9bd;
   cursor: pointer;
   text-align: center;
+}
+
+.btn-tabs:hover {
+  background-color: #ffefef;
+  color: #7c99ac;
 }
 
 /* search bar */
