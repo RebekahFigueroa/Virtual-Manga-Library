@@ -20,37 +20,52 @@ const createUserProfile = (userProfile) => {
   profileLink.setAttribute("href", userProfile.data.url);
   profileLink.innerHTML = "Check out myAnimeList!";
 
-  // get a recommendation (not using for now because I need to figure out nsfw filter)
+  // get a recommendation of unread item from json server
   const recommendationSection = document.createElement("div");
   recommendationSection.classList.add("recommendation-section");
   const recommendationBlurb = document.createElement("h4");
-  recommendationBlurb.innerHTML = "Looking for a recommendation? Click below";
+  recommendationBlurb.innerHTML = "Find Unread Series To Complete";
 
   const recommendationButton = document.createElement("button");
-  recommendationButton.innerHTML = "Get Recommendation";
+  recommendationButton.innerHTML = "Get Series";
+  const getRecommendedMangaContainer = document.createElement("div");
+
+  recommendationSection.appendChild(recommendationBlurb);
+  recommendationSection.appendChild(recommendationButton);
+  recommendationSection.appendChild(getRecommendedMangaContainer);
+
   recommendationButton.addEventListener("click", () => {
-    fetch("https://api.jikan.moe/v4/random/manga")
+    getRecommendedMangaContainer.innerHTML = "";
+    fetch("http://localhost:3000/manga")
       .then((response) => response.json())
       .then((json) => {
-        const recommendationPicture = document.createElement("img");
-        recommendationPicture.src = json.data.images.jpg.image_url;
+        const unreadMangas = json.filter((manga) => manga.readStatus === false);
+        // if there are any unreadMangas - recommend a randomone
+        // else display "you've read everything"
+        // randomMangaLibraryPick = [Math.floor(Math.random() * json.length)];
+        if (unreadMangas.length !== 0) {
+          const randomMangaLibraryPick =
+            unreadMangas[Math.floor(Math.random() * unreadMangas.length)];
+          const recommendationPicture = document.createElement("img");
+          recommendationPicture.src = randomMangaLibraryPick.image;
 
-        const recommendationTitle = document.createElement("h3");
-        recommendationTitle.innerHTML = json.data.title;
+          const recommendationTitle = document.createElement("h3");
+          recommendationTitle.innerHTML = randomMangaLibraryPick.titleEnglish;
 
-        recommendationSection.appendChild(recommendationPicture);
-        recommendationSection.appendChild(recommendationTitle);
+          getRecommendedMangaContainer.appendChild(recommendationPicture);
+          getRecommendedMangaContainer.appendChild(recommendationTitle);
+        } else {
+          console.log("You've read all the manga in the library");
+        }
       });
   });
 
   //append
   profileContainer.appendChild(welcomeBanner);
-  //   profileContainer.appendChild(userProfileSection);
-  //   profileContainer.appendChild(recommendationSection);
-  //   userProfileSection.appendChild(profilePicture);
-  //   userProfileSection.appendChild(profileLink);
-  //   recommendationSection.appendChild(recommendationBlurb);
-  //   recommendationSection.appendChild(recommendationButton);
+  profileContainer.appendChild(userProfileSection);
+  profileContainer.appendChild(recommendationSection);
+  userProfileSection.appendChild(profilePicture);
+  userProfileSection.appendChild(profileLink);
 };
 
 // create card for search
