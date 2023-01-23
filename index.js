@@ -56,7 +56,7 @@ const createUserProfile = (userProfile) => {
 
 // create card for search
 const renderSearchResults = () => {
-  const cardsContainer = document.getElementById("cards-container");
+  const cardsContainer = document.getElementById("search-cards-container");
   cardsContainer.innerHTML = "";
   searchResults.forEach((searchResult) => {
     console.log(searchResult);
@@ -99,6 +99,30 @@ const renderSearchResults = () => {
   });
 };
 
+// tab toggling
+const tabToggle = () => {
+  const mangaLibraryTab = document.getElementById("manga-library-tab");
+  const searchTab = document.getElementById("search-tab");
+  const mangaLibraryContainer = document.getElementById(
+    "manga-library-container"
+  );
+  const searchContainer = document.getElementById("search-content-container");
+
+  mangaLibraryTab.addEventListener("click", () => {
+    mangaLibraryContainer.style.display = "block";
+    searchContainer.style.display = "none";
+    mangaLibraryTab.style.backgroundColor = "#ffefef";
+    searchTab.style.backgroundColor = "#d3dedc";
+  });
+
+  searchTab.addEventListener("click", () => {
+    mangaLibraryContainer.style.display = "none";
+    searchContainer.style.display = "block";
+    mangaLibraryTab.style.backgroundColor = "#d3dedc";
+    searchTab.style.backgroundColor = "#ffefef";
+  });
+};
+
 //results of search API request (aka json.data)
 let searchResults = [];
 
@@ -127,4 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
         renderSearchResults();
       });
   });
+  //toggle behavior for tabs
+  tabToggle();
 });

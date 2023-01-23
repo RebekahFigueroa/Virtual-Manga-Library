@@ -45,6 +45,10 @@
 }
 
 /* search bar */
+#search-content-container {
+  display: none;
+}
+
 #search-bar-container {
   background-color: #7c99ac;
   display: flex;
@@ -78,8 +82,13 @@
   margin-left: 1rem;
 }
 
+#search-bar-submit-btn:hover {
+  cursor: pointer;
+  box-shadow: 5px 8px 10px 0 rgba(33, 33, 33, 0.3);
+}
+
 /* Add manga to library render results (aka cards container) */
-#cards-container {
+#search-cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   row-gap: 1rem;

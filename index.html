@@ -11,11 +11,13 @@
   <body>
     <div id="user-profile-container"></div>
     <div id="tab-container">
-      <button class="btn-tabs">Manga Library</button>
-      <button class="btn-tabs">Add to Library</button>
+      <button class="btn-tabs" id="manga-library-tab">Manga Library</button>
+      <button class="btn-tabs" id="search-tab">Add to Library</button>
     </div>
-    <div class="manga-library-container"></div>
-    <div class="search-content-container">
+    <div id="manga-library-container">
+      PLACEHOLDER CONTAINER FOR THE MANGA LIBRARY
+    </div>
+    <div id="search-content-container">
       <div id="search-bar-container">
         <p id="search-bar-text">Search For Manga</p>
         <form id="search-bar-form">
@@ -23,7 +25,7 @@
           <input type="submit" value="Search" id="search-bar-submit-btn" />
         </form>
       </div>
-      <div id="cards-container"></div>
+      <div id="search-cards-container"></div>
     </div>
   </body>
 </html>
