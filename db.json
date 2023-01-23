@@ -1,49 +1,109 @@
 {
   "manga": [
     {
+      "id": 1,
       "mal_id": 107562,
-      "title-english": "The Apothecary Diaries",
+      "titleEnglish": "The Apothecary Diaries",
       "image": "https://cdn.myanimelist.net/images/manga/3/201154.jpg",
-      "authors": ["Hyuuga, Natsu", "Nekokurage", "Nanao, Itsuki"],
-      "demographic": ["Seinen"],
-      "genres": ["Drama"],
-      "publishing": true, 
+      "authors": [
+        "Hyuuga, Natsu",
+        "Nekokurage",
+        "Nanao, Itsuki"
+      ],
+      "type": "manga",
+      "demographic": [
+        "Seinen"
+      ],
+      "genres": [
+        "Drama"
+      ],
+      "publishing": true,
       "published": "May 25, 2017 to ?",
-      "themes": ["Historical", "Medical"],
+      "themes": [
+        "Historical",
+        "Medical"
+      ],
       "synopsis": "In an imperial court in ancient China, it has been a few months since a 17-year-old girl known as Maomao was kidnapped and forced to work as a low-level servant at the emperor's palace. Still, she manages to retain her curious and pragmatic spirit, planning to work until her years of servitude are over. One day, however, she catches wind of the fact that the emperor's two infants have fallen gravely ill. She decides to secretly take action, drawing on her experience as a pharmacist raised in the poor red-light district. Despite Maomao's attempts to remain anonymous, she soon catches the eye of Jinshi, an influential eunuch who recognizes her talents. Maomao soon finds herself in the emperor's inner court, where she gradually makes a name for herself by utilizing her knowledge and eccentric personality to solve various medical mysteries. [Written by MAL Rewrite]",
       "volumesLibrary": 6,
       "readStatus": true,
       "libraryScore": 8
     },
     {
+      "id": 2,
       "mal_id": 4571,
-      "title-english": "Snow White with the Red Hair",
+      "titleEnglish": "Snow White with the Red Hair",
       "image": "https://cdn.myanimelist.net/images/manga/2/258717.jpg",
-      "authors":["Akizuki, Sorata"],
-      "demographic": ["Shoujo"],
-      "genres": ["Drama", "Fantasy", "Romance"],
+      "authors": [
+        "Akizuki, Sorata"
+      ],
+      "type": "manga",
+      "demographic": [
+        "Shoujo"
+      ],
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Romance"
+      ],
       "publishing": true,
       "published": "Aug 10, 2006 to ? ",
       "themes": [],
-      "synopsis": "Shirayuki is Tanbarun's friendly neighborhood herbalist, whose unique red hair ends up drawing unwanted attention from the vain prince of Tanbarun, Raji Shenazard. Faced with the unattractive proposition to become his concubine, Shirayuki chops off her hair and flees the country overnight. In her journey deep into the forest, she encounters Zen Wistalia, the prince of the neighboring country of Clarines. When Zen takes a bite out of a poisoned apple that Prince Raji sends in order to recapture Shirayuki, she expertly uses the herbs at her disposal to cure him. Together with Zen and his two friends, Kiki and Mitsuhide, Shirayuki travels to Clarines, where she aims to make a life for herself as an apothecary of the royal court. As Zen slowly begins to mean more to her than the prince of her new country, the two of them must learn to work together toward their respective dreams despite the difference in status. [Written by MAL Rewrite] Included one-shots: Volume 1: Hachigatsu no Shikisai (Four-season Color of August) Volume 2: Bokura wo Tsunaide. (Bind Us)", 
+      "synopsis": "Shirayuki is Tanbarun's friendly neighborhood herbalist, whose unique red hair ends up drawing unwanted attention from the vain prince of Tanbarun, Raji Shenazard. Faced with the unattractive proposition to become his concubine, Shirayuki chops off her hair and flees the country overnight. In her journey deep into the forest, she encounters Zen Wistalia, the prince of the neighboring country of Clarines. When Zen takes a bite out of a poisoned apple that Prince Raji sends in order to recapture Shirayuki, she expertly uses the herbs at her disposal to cure him. Together with Zen and his two friends, Kiki and Mitsuhide, Shirayuki travels to Clarines, where she aims to make a life for herself as an apothecary of the royal court. As Zen slowly begins to mean more to her than the prince of her new country, the two of them must learn to work together toward their respective dreams despite the difference in status. [Written by MAL Rewrite] Included one-shots: Volume 1: Hachigatsu no Shikisai (Four-season Color of August) Volume 2: Bokura wo Tsunaide. (Bind Us)",
       "volumesLibrary": 1,
       "readStatus": false,
       "libraryScore": null
     },
     {
+      "id": 3,
       "mal_id": 119161,
-      "title-english": "Spy x Family",
+      "titleEnglish": "Spy x Family",
       "image": "https://cdn.myanimelist.net/images/manga/3/219741.jpg",
-      "authors":["Endou, Tatsuya"],
-      "demographic":["Shounen"],
-      "genres":["Action", "Comedy"],
+      "authors": [
+        "Endou, Tatsuya"
+      ],
+      "type": "manga",
+      "demographic": [
+        "Shounen"
+      ],
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
       "publishing": true,
       "published": "Mar 25, 2019 to ?",
-      "themes":["Childcare"],
-      "synopsis": "For the agent known as \"Twilight,\" no order is too tall if it is for the sake of peace. Operating as Westalis' master spy, Twilight works tirelessly to prevent extremists from sparking a war with neighboring country Ostania. For his latest mission, he must investigate Ostanian politician Donovan Desmond by infiltrating his son's school: the prestigious Eden Academy. Thus, the agent faces the most difficult task of his career: get married, have a child, and play family. Twilight, or \"Loid Forger,\" quickly adopts the unassuming orphan Anya to play the role of a six-year-old daughter and prospective Eden Academy student. For a wife, he comes across Yor Briar, an absent-minded office worker who needs a pretend partner of her own to impress her friends. However, Loid is not the only one with a hidden nature. Yor moonlights as the lethal assassin \"Thorn Princess.\" For her, marrying Loid creates the perfect cover. Meanwhile, Anya is not the ordinary girl she appears to be; she is an esper, the product of secret experiments that allow her to read minds. Although she uncovers their true identities, Anya is thrilled that her new parents are cool secret agents! She would never tell them, of course. That would ruin the fun. Under the guise of \"The Forgers,\" the spy, the assassin, and the esper must act as a family while carrying out their own agendas. Although these liars and misfits are only playing parts, they soon find that family is about far more than blood relations. [Written by MAL Rewrite]", 
+      "themes": [
+        "Childcare"
+      ],
+      "synopsis": "For the agent known as \"Twilight,\" no order is too tall if it is for the sake of peace. Operating as Westalis' master spy, Twilight works tirelessly to prevent extremists from sparking a war with neighboring country Ostania. For his latest mission, he must investigate Ostanian politician Donovan Desmond by infiltrating his son's school: the prestigious Eden Academy. Thus, the agent faces the most difficult task of his career: get married, have a child, and play family. Twilight, or \"Loid Forger,\" quickly adopts the unassuming orphan Anya to play the role of a six-year-old daughter and prospective Eden Academy student. For a wife, he comes across Yor Briar, an absent-minded office worker who needs a pretend partner of her own to impress her friends. However, Loid is not the only one with a hidden nature. Yor moonlights as the lethal assassin \"Thorn Princess.\" For her, marrying Loid creates the perfect cover. Meanwhile, Anya is not the ordinary girl she appears to be; she is an esper, the product of secret experiments that allow her to read minds. Although she uncovers their true identities, Anya is thrilled that her new parents are cool secret agents! She would never tell them, of course. That would ruin the fun. Under the guise of \"The Forgers,\" the spy, the assassin, and the esper must act as a family while carrying out their own agendas. Although these liars and misfits are only playing parts, they soon find that family is about far more than blood relations. [Written by MAL Rewrite]",
       "volumesLibrary": 8,
       "readStatus": true,
       "libraryScore": 8
+    },
+    {
+      "mal_id": 111628,
+      "titleEnglish": "The Saint's Magic Power is Omnipotent",
+      "image": "https://cdn.myanimelist.net/images/manga/3/206329.jpg",
+      "authors": [
+        "Fuji, Azuki",
+        "Tachibana, Yuka"
+      ],
+      "type": "Manga",
+      "demographic": [],
+      "genres": [
+        "Fantasy",
+        "Romance"
+      ],
+      "publishing": "Jul 31, 2017 to ?",
+      "published": true,
+      "themes": [
+        "Isekai",
+        "Medical"
+      ],
+      "synopsis": "Living the workaholic life in her mid-20s, Sei never expected she’d be summoned to another world, let alone obtain the power of a living Saint. And she especially didn’t expect to be totally ignored by the locals! While the kingdom desperately needs a hero, it turns out Sei was just the backup option. Left alone, she explores her newfound powers at the royal Research Institute, unraveling the mysteries of magic potions. As she helps the sick and the dying, her talents reveal themselves. Might Sei be the Saint this world needs after all? (Source: Seven Seas Entertainment)",
+      "volumesLibrary": null,
+      "readStatus": null,
+      "libraryScore": null,
+      "id": 4
     }
   ]
 }

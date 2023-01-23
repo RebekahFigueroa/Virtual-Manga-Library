@@ -54,30 +54,6 @@ const createUserProfile = (userProfile) => {
   recommendationSection.appendChild(recommendationButton);
 };
 
-// tab toggling
-const tabToggle = () => {
-  const mangaLibraryTab = document.getElementById("manga-library-tab");
-  const searchTab = document.getElementById("search-tab");
-  const mangaLibraryContainer = document.getElementById(
-    "manga-library-container"
-  );
-  const searchContainer = document.getElementById("search-content-container");
-
-  mangaLibraryTab.addEventListener("click", () => {
-    mangaLibraryContainer.style.display = "grid";
-    searchContainer.style.display = "none";
-    mangaLibraryTab.style.backgroundColor = "#ffefef";
-    searchTab.style.backgroundColor = "#d3dedc";
-  });
-
-  searchTab.addEventListener("click", () => {
-    mangaLibraryContainer.style.display = "none";
-    searchContainer.style.display = "grid";
-    mangaLibraryTab.style.backgroundColor = "#d3dedc";
-    searchTab.style.backgroundColor = "#ffefef";
-  });
-};
-
 // create card for search
 const renderSearchResults = () => {
   const cardsContainer = document.getElementById("search-cards-container");
@@ -103,6 +79,36 @@ const renderSearchResults = () => {
     const addToLibraryBtn = document.createElement("button");
     addToLibraryBtn.innerHTML = "Add To Library";
     addToLibraryBtn.classList.add("add-button");
+    // add manga search button behavior to add to library
+    addToLibraryBtn.addEventListener("click", () => {
+      console.log(searchResult);
+      fetch(`http://localhost:3000/manga`, {
+        method: "POST",
+        body: JSON.stringify({
+          mal_id: searchResult.mal_id,
+          titleEnglish: searchResult.title_english,
+          image: searchResult.images.jpg.image_url,
+          authors: searchResult.authors.map((author) => author.name),
+          type: searchResult.type,
+          demographic: searchResult.demographics.map(
+            (demographic) => demographic.name
+          ),
+          genres: searchResult.genres.map((genre) => genre.name),
+          publishing: searchResult.published.string,
+          published: searchResult.publishing,
+          themes: searchResult.themes.map((theme) => theme.name),
+          synopsis: searchResult.synopsis,
+          volumesLibrary: null,
+          readStatus: null,
+          libraryScore: null,
+        }),
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    });
 
     //Append to card + card container
     cardsContainer.appendChild(cardWithMangaInfo);
@@ -148,7 +154,7 @@ const mangaLibrary = () => {
         //Add title (english)
         const mangaTitle = document.createElement("h3");
         mangaTitle.style.textAlign = "center";
-        mangaTitle.innerHTML = mangaResult["title-english"];
+        mangaTitle.innerHTML = mangaResult["titleEnglish"];
         //Add authors
         const mangaAuthors = document.createElement("div");
         mangaAuthors.innerHTML =
@@ -196,9 +202,31 @@ const mangaLibrary = () => {
         });
       });
     });
+};
 
-  // use card ID to get results from jikan for each card
-  // render results
+// tab toggling
+const tabToggle = () => {
+  const mangaLibraryTab = document.getElementById("manga-library-tab");
+  const searchTab = document.getElementById("search-tab");
+  const mangaLibraryContainer = document.getElementById(
+    "manga-library-container"
+  );
+  const searchContainer = document.getElementById("search-content-container");
+
+  mangaLibraryTab.addEventListener("click", () => {
+    mangaLibraryContainer.style.display = "grid";
+    searchContainer.style.display = "none";
+    mangaLibraryTab.style.backgroundColor = "#ffefef";
+    searchTab.style.backgroundColor = "#d3dedc";
+  });
+
+  searchTab.addEventListener("click", () => {
+    mangaLibraryContainer.style.display = "none";
+    searchContainer.style.display = "grid";
+    mangaLibraryTab.style.backgroundColor = "#d3dedc";
+    searchTab.style.backgroundColor = "#ffefef";
+    mangaLibrary();
+  });
 };
 
 //results of search API request (aka json.data)
