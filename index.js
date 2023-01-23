@@ -99,6 +99,42 @@ const renderSearchResults = () => {
   });
 };
 
+//create cards for library
+const mangaLibrary = () => {
+  const mangaLibraryContainer = document.getElementById(
+    "manga-library-container"
+  );
+  mangaLibraryContainer.innerHTML = "";
+  //get manga library server from json server
+  fetch(`http://localhost:3000/manga`)
+    .then((response) => response.json())
+    .then((mangaResults) => {
+      console.log(mangaResults);
+      // for each result in manga library, make a card
+      mangaResults.forEach((mangaResult) => {
+        console.log(mangaResult);
+        //create card
+        const cardWithMangaInfo = document.createElement("div");
+        cardWithMangaInfo.classList.add("manga-card");
+        // add image
+        const mangaImg = document.createElement("img");
+        mangaImg.classList.add("manga-image");
+        mangaImg.src = mangaResult.image;
+        //Add title (english)
+        const mangaTitle = document.createElement("h3");
+        mangaTitle.innerHTML = mangaResult["title-english"];
+
+        //Append to card + card container
+        mangaLibraryContainer.appendChild(cardWithMangaInfo);
+        cardWithMangaInfo.appendChild(mangaImg);
+        cardWithMangaInfo.appendChild(mangaTitle);
+      });
+    });
+
+  // use card ID to get results from jikan for each card
+  // render results
+};
+
 // tab toggling
 const tabToggle = () => {
   const mangaLibraryTab = document.getElementById("manga-library-tab");
@@ -136,11 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(`https://api.jikan.moe/v4/users/kiriviri/full`)
     .then((response) => response.json())
     .then((json) => {
-      console.log(json);
       createUserProfile(json);
     });
 
-  // add new manga search
+  // add new manga search results
   searchBarSubmitButton.addEventListener("click", (event) => {
     event.preventDefault();
     fetch(`https://api.jikan.moe/v4/manga?q=${searchBarInput.value}&sfw`)
@@ -151,6 +186,10 @@ document.addEventListener("DOMContentLoaded", () => {
         renderSearchResults();
       });
   });
+
   //toggle behavior for tabs
   tabToggle();
+
+  // render manga library
+  mangaLibrary();
 });

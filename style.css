@@ -44,6 +44,16 @@
   color: #7c99ac;
 }
 
+/* manga card container */
+#manga-library-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 2rem;
+  padding: 2rem 3rem;
+  background-color: #7c99ac;
+}
+
 /* search bar */
 #search-content-container {
   display: none;
@@ -125,7 +135,6 @@
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   width: 100%;
 }
