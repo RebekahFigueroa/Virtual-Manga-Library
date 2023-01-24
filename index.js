@@ -220,7 +220,6 @@ const mangaLibrary = () => {
             .then((response) => response.json())
             .then((json) => {
               cardWithMangaInfo.remove();
-              console.log(json);
             });
         });
       });
