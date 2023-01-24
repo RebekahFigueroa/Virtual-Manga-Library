@@ -1,13 +1,40 @@
 // helper functions
+
 //pull user profile
-const createUserProfile = (userProfile) => {
+const createUserProfile = () => {
+  const welcomeBanner = document.createElement("h1");
+  welcomeBanner.classList.add("welcome-banner");
+  welcomeBanner.innerHTML = `Welcome to My Virtual Manga Shelf!`;
+
   const profileContainer = document.getElementById("user-profile-container");
   const userProfileSection = document.createElement("div");
   userProfileSection.classList.add("user-profile-section");
 
-  const welcomeBanner = document.createElement("h1");
-  welcomeBanner.classList.add("welcome-banner");
-  welcomeBanner.innerHTML = `Welcome to My Virtual Manga Shelf!`;
+  const userProfileHeader = document.createElement("div");
+  userProfileHeader.classList.add("user-profile-header");
+  userProfileHeader.innerHTML = "Fun Stats About The Library";
+
+  const userProfileMangaCount = document.createElement("div");
+  userProfileMangaCount.classList.add("user-profile-manga-count");
+  userProfileMangaCount.innerHTML = "How many manga are in the library?";
+
+  const userProfileMangaType = document.createElement("div");
+  userProfileMangaType.classList.add("user-profile-manga-type");
+  userProfileMangaType.innerHTML = "What % of my library is manga?";
+
+  const userProfileFavoriteGenre = document.createElement("div");
+  userProfileFavoriteGenre.classList.add("user-profile-favorite-genre");
+  userProfileFavoriteGenre.innerHTML = "What is my favorite genre?";
+
+  const userProfileMangaPercent = document.createElement("div");
+  userProfileMangaPercent.classList.add("user-profile-manga-percent");
+  userProfileMangaPercent.innerHTML = "What % of my library have I read?";
+
+  userProfileSection.appendChild(userProfileHeader);
+  userProfileSection.appendChild(userProfileMangaCount);
+  userProfileSection.appendChild(userProfileMangaType);
+  userProfileSection.appendChild(userProfileFavoriteGenre);
+  userProfileSection.appendChild(userProfileMangaPercent);
 
   // get a recommendation of unread item from json server
   const recommendationSection = document.createElement("div");
@@ -220,6 +247,7 @@ const mangaLibrary = () => {
             .then((response) => response.json())
             .then((json) => {
               cardWithMangaInfo.remove();
+              console.log(json);
             });
         });
       });

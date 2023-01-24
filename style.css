@@ -20,6 +20,33 @@
 
 .user-profile-section {
   grid-area: sidebar;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "fact1 fact2"
+    "fact3 fact4";
+}
+
+.user-profile-header {
+  grid-area: header;
+}
+
+.user-profile-manga-count {
+  grid-area: fact1;
+}
+
+.user-profile-manga-type {
+  grid-area: fact2;
+}
+
+.user-profile-favorite-genre {
+  grid-area: fact3;
+}
+
+.user-profile-manga-percent {
+  grid-area: fact4;
 }
 
 .recommendation-section {

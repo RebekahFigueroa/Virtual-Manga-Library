@@ -58,3 +58,4 @@ json-server:
 5. Add a way to access from anywhere (not just when local db is running)
 6. Add interactive star rating to replace numerical system
 7. Add card flip to view synopsis
+8. Add a wishlist section
