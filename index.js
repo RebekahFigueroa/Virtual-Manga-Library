@@ -17,18 +17,91 @@ const createUserProfile = () => {
   const userProfileMangaCount = document.createElement("div");
   userProfileMangaCount.classList.add("user-profile-manga-count");
   userProfileMangaCount.innerHTML = "How many manga are in the library?";
+  fetch(" http://localhost:3000/manga")
+    .then((response) => response.json())
+    .then((mangas) => {
+      const mangaCountNumber = document.createElement("div");
+      mangaCountNumber.innerHTML = Object.keys(mangas).length;
+      userProfileMangaCount.appendChild(mangaCountNumber);
+    });
 
   const userProfileMangaType = document.createElement("div");
   userProfileMangaType.classList.add("user-profile-manga-type");
   userProfileMangaType.innerHTML = "What % of my library is manga?";
+  fetch(" http://localhost:3000/manga")
+    .then((response) => response.json())
+    .then((mangas) => {
+      const mangaCount = mangas.filter(
+        (manga) => manga.type === "Manga"
+      ).length;
+
+      const lightNovelCount = mangas.filter(
+        (manga) => manga.type === "Light Novel"
+      ).length;
+
+      const percentOfManga = mangaCount / (mangaCount + lightNovelCount);
+      const mangaType = document.createElement("div");
+      mangaType.innerHTML = percentOfManga.toFixed(2) * 100 + "%";
+      userProfileMangaType.appendChild(mangaType);
+    });
 
   const userProfileFavoriteGenre = document.createElement("div");
   userProfileFavoriteGenre.classList.add("user-profile-favorite-genre");
   userProfileFavoriteGenre.innerHTML = "What is my favorite genre?";
+  fetch(" http://localhost:3000/manga")
+    .then((response) => response.json())
+    .then((mangas) => {
+      const genreCounts = {};
+
+      mangas.forEach((manga) =>
+        manga.genres.forEach((genre) => {
+          genreCounts[genre] = (genreCounts[genre] ?? 0) + 1;
+        })
+      );
+
+      const genresSorted = Object.keys(genreCounts).sort(
+        (a, b) => genreCounts[b] - genreCounts[a]
+      );
+
+      console.log(genresSorted);
+      const topGenre = genresSorted.slice(0, 1);
+      const secondGenre = genresSorted.slice(1, 2);
+      const thirdGenre = genresSorted.slice(2, 3);
+
+      const mangaGenreNumberTop = document.createElement("div");
+      mangaGenreNumberTop.innerHTML = "First: " + topGenre;
+      userProfileFavoriteGenre.appendChild(mangaGenreNumberTop);
+
+      const mangaGenreNumberSecond = document.createElement("div");
+      mangaGenreNumberSecond.innerHTML = "Second: " + secondGenre;
+      userProfileFavoriteGenre.appendChild(mangaGenreNumberSecond);
+
+      const mangaGenreNumberThird = document.createElement("div");
+      mangaGenreNumberThird.innerHTML = "Third: " + thirdGenre;
+      userProfileFavoriteGenre.appendChild(mangaGenreNumberThird);
+    });
 
   const userProfileMangaPercent = document.createElement("div");
   userProfileMangaPercent.classList.add("user-profile-manga-percent");
   userProfileMangaPercent.innerHTML = "What % of my library have I read?";
+  fetch(" http://localhost:3000/manga")
+    .then((response) => response.json())
+    .then((mangas) => {
+      const mangaHaveRead = mangas.filter(
+        (manga) => manga.readStatus === true
+      ).length;
+
+      const mangaHaveNotRead = mangas.filter(
+        (manga) => manga.readStatus === false
+      ).length;
+
+      const percentOfLibraryRead =
+        mangaHaveRead / (mangaHaveRead + mangaHaveNotRead);
+      const divPercentOfLibraryRead = document.createElement("div");
+      divPercentOfLibraryRead.innerHTML =
+        percentOfLibraryRead.toFixed(2) * 100 + "%";
+      userProfileMangaPercent.appendChild(divPercentOfLibraryRead);
+    });
 
   userProfileSection.appendChild(userProfileHeader);
   userProfileSection.appendChild(userProfileMangaCount);
@@ -247,7 +320,6 @@ const mangaLibrary = () => {
             .then((response) => response.json())
             .then((json) => {
               cardWithMangaInfo.remove();
-              console.log(json);
             });
         });
       });
