@@ -2,11 +2,13 @@
 
 //pull user profile
 const createUserProfile = () => {
+  const profileContainer = document.getElementById("user-profile-container");
+  profileContainer.innerHTML = "";
+
   const welcomeBanner = document.createElement("h1");
   welcomeBanner.classList.add("welcome-banner");
   welcomeBanner.innerHTML = `Welcome to My Virtual Manga Shelf!`;
 
-  const profileContainer = document.getElementById("user-profile-container");
   const userProfileSection = document.createElement("div");
   userProfileSection.classList.add("user-profile-section");
 
@@ -69,15 +71,15 @@ const createUserProfile = () => {
       const thirdGenre = genresSorted.slice(2, 3);
 
       const mangaGenreNumberTop = document.createElement("div");
-      mangaGenreNumberTop.innerHTML = "First: " + topGenre;
+      mangaGenreNumberTop.innerHTML = "1st - " + topGenre;
       userProfileFavoriteGenre.appendChild(mangaGenreNumberTop);
 
       const mangaGenreNumberSecond = document.createElement("div");
-      mangaGenreNumberSecond.innerHTML = "Second: " + secondGenre;
+      mangaGenreNumberSecond.innerHTML = "2nd - " + secondGenre;
       userProfileFavoriteGenre.appendChild(mangaGenreNumberSecond);
 
       const mangaGenreNumberThird = document.createElement("div");
-      mangaGenreNumberThird.innerHTML = "Third: " + thirdGenre;
+      mangaGenreNumberThird.innerHTML = "3rd - " + thirdGenre;
       userProfileFavoriteGenre.appendChild(mangaGenreNumberThird);
     });
 
@@ -208,7 +210,7 @@ const renderSearchResults = () => {
         },
       })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then((json) => createUserProfile(json));
     });
 
     //Append to card + card container
@@ -320,6 +322,7 @@ const mangaLibrary = () => {
             .then((response) => response.json())
             .then((json) => {
               cardWithMangaInfo.remove();
+              createUserProfile(json);
             });
         });
       });
