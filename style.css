@@ -21,7 +21,7 @@
 .user-profile-section {
   grid-area: sidebar;
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: 3rem 9rem 9rem;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "header header"
@@ -34,46 +34,118 @@
   text-align: center;
   font-size: 24px;
   font-weight: 400;
+  color: #ffefef;
 }
 
 .user-profile-manga-count {
   grid-area: fact1;
+  font-size: 18px;
+  font-weight: 200;
+  color: #d7cbcb;
+  text-align: center;
 }
 
 .user-profile-manga-type {
   grid-area: fact2;
+  font-size: 18px;
+  font-weight: 200;
+  color: #d7cbcb;
+  text-align: center;
 }
 
 .user-profile-favorite-genre {
   grid-area: fact3;
+  font-size: 18px;
+  font-weight: 200;
+  color: #d7cbcb;
+  text-align: center;
 }
 
 .user-profile-manga-percent {
   grid-area: fact4;
+  font-size: 18px;
+  font-weight: 200;
+  color: #d7cbcb;
+  text-align: center;
+}
+
+.stats-cards {
+  font-size: 72px;
+  font-weight: 400;
+  color: #ffefef;
+  text-align: center;
+}
+
+.stats-cards-genres {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffefef;
+  text-align: center;
 }
 
 .recommendation-section {
   grid-area: recommendation;
-  height: 550px;
+  display: grid;
+  grid-template-rows: 3rem 18rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header container"
+    "button container";
+}
+
+.recommendation-header {
+  grid-area: header;
+  color: #ffefef;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .recommendation-button {
+  grid-area: button;
   border-radius: 12px;
   background-color: #ffefef;
   border: 1px solid #ffefef;
   color: #7c99ac;
   font-weight: 400;
   padding: 15px 32px;
-  margin-bottom: 2rem;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
-  width: 33%;
-  align-items: center;
+  width: 75%;
+  height: 25%;
+  margin: 0 auto;
+}
+
+.recommended-image-title-container {
+  grid-area: container;
+  display: grid;
+  grid-template-rows: 3rem 18rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "title title"
+    "image image";
+}
+
+.recommendation-title {
+  grid-area: title;
+  color: #ffefef;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .recommendation-button:hover {
   cursor: pointer;
+}
+
+.recommendation-image {
+  grid-area: image;
+  width: auto;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Tabs */

@@ -23,6 +23,7 @@ const createUserProfile = () => {
     .then((response) => response.json())
     .then((mangas) => {
       const mangaCountNumber = document.createElement("div");
+      mangaCountNumber.classList.add("stats-cards");
       mangaCountNumber.innerHTML = Object.keys(mangas).length;
       userProfileMangaCount.appendChild(mangaCountNumber);
     });
@@ -44,6 +45,7 @@ const createUserProfile = () => {
       const percentOfManga = mangaCount / (mangaCount + lightNovelCount);
       const mangaType = document.createElement("div");
       mangaType.innerHTML = percentOfManga.toFixed(2) * 100 + "%";
+      mangaType.classList.add("stats-cards");
       userProfileMangaType.appendChild(mangaType);
     });
 
@@ -71,14 +73,17 @@ const createUserProfile = () => {
       const thirdGenre = genresSorted.slice(2, 3);
 
       const mangaGenreNumberTop = document.createElement("div");
+      mangaGenreNumberTop.classList.add("stats-cards-genres");
       mangaGenreNumberTop.innerHTML = "1st - " + topGenre;
       userProfileFavoriteGenre.appendChild(mangaGenreNumberTop);
 
       const mangaGenreNumberSecond = document.createElement("div");
+      mangaGenreNumberSecond.classList.add("stats-cards-genres");
       mangaGenreNumberSecond.innerHTML = "2nd - " + secondGenre;
       userProfileFavoriteGenre.appendChild(mangaGenreNumberSecond);
 
       const mangaGenreNumberThird = document.createElement("div");
+      mangaGenreNumberThird.classList.add("stats-cards-genres");
       mangaGenreNumberThird.innerHTML = "3rd - " + thirdGenre;
       userProfileFavoriteGenre.appendChild(mangaGenreNumberThird);
     });
@@ -100,6 +105,7 @@ const createUserProfile = () => {
       const percentOfLibraryRead =
         mangaHaveRead / (mangaHaveRead + mangaHaveNotRead);
       const divPercentOfLibraryRead = document.createElement("div");
+      divPercentOfLibraryRead.classList.add("stats-cards");
       divPercentOfLibraryRead.innerHTML =
         percentOfLibraryRead.toFixed(2) * 100 + "%";
       userProfileMangaPercent.appendChild(divPercentOfLibraryRead);
@@ -114,7 +120,8 @@ const createUserProfile = () => {
   // get a recommendation of unread item from json server
   const recommendationSection = document.createElement("div");
   recommendationSection.classList.add("recommendation-section");
-  const recommendationBlurb = document.createElement("h4");
+  const recommendationBlurb = document.createElement("div");
+  recommendationBlurb.classList.add("recommendation-header");
   recommendationBlurb.innerHTML = "Find Unread Series To Complete";
 
   const recommendationButton = document.createElement("button");
@@ -122,6 +129,9 @@ const createUserProfile = () => {
   recommendationButton.classList.add("recommendation-button");
 
   const getRecommendedMangaContainer = document.createElement("div");
+  getRecommendedMangaContainer.classList.add(
+    "recommended-image-title-container"
+  );
 
   recommendationSection.appendChild(recommendationBlurb);
   recommendationSection.appendChild(recommendationButton);
@@ -141,12 +151,14 @@ const createUserProfile = () => {
             unreadMangas[Math.floor(Math.random() * unreadMangas.length)];
           const recommendationPicture = document.createElement("img");
           recommendationPicture.src = randomMangaLibraryPick.image;
+          recommendationPicture.classList.add("recommendation-image");
 
-          const recommendationTitle = document.createElement("h3");
+          const recommendationTitle = document.createElement("div");
+          recommendationTitle.classList.add("recommendation-title");
           recommendationTitle.innerHTML = randomMangaLibraryPick.titleEnglish;
 
-          getRecommendedMangaContainer.appendChild(recommendationPicture);
           getRecommendedMangaContainer.appendChild(recommendationTitle);
+          getRecommendedMangaContainer.appendChild(recommendationPicture);
         } else {
           console.log("You've read all the manga in the library");
         }
