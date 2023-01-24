@@ -26,12 +26,38 @@ Currently under development.
 
 json-server:
 
+1. Install JSON server as a NPM package
+   > $ npm install -g json-server
+2. Run JSON server
+   > json-server --watch db.json
+
 ## Demo
 
 ## Features (with examples)
 
-## Usage
+1. Recommend a series in the library that you have not read yet (found in header section)
+   -reclick button to get new recommendation
+2. Toggle between the manga library and the add to library section
+3. Manga library
+
+- view all manga in library (need to have local json server open to view cards)
+- cards display details about manga series
+- Button to remove series if wrong manga was added
+
+4. Search for manga to add to library
+
+- Use search bar to type in a series name
+- Select Add to Library button if you would like to add series to library
 
 ## Future Roadmap
 
-##
+1. Ability to add personal score, number of manga in series, and if I have read
+
+- Currently have to update database manually
+
+2. Add statistics for library such as top genre or average score
+3. Convert genres into chips
+4. Add library filtering
+5. Add a way to access from anywhere (not just when local db is running)
+6. Add interactive star rating to replace numerical system
+7. Add card flip to view synopsis
