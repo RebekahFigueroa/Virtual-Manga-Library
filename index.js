@@ -211,6 +211,7 @@ const renderSearchResults = () => {
       })
         .then((response) => response.json())
         .then((json) => createUserProfile(json));
+      confirm("Manga was added!");
     });
 
     //Append to card + card container
