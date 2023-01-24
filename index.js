@@ -9,17 +9,6 @@ const createUserProfile = (userProfile) => {
   welcomeBanner.classList.add("welcome-banner");
   welcomeBanner.innerHTML = `Welcome to My Virtual Manga Shelf!`;
 
-  //adds profile picture (not using for now until I can add more interactivity with mal profile)
-  const profilePicture = document.createElement("img");
-  profilePicture.src = userProfile.data.images.jpg.image_url;
-  //
-
-  //adds profile link (not using for now until I can add more interactivity with mal profile)
-  const profileLink = document.createElement("a");
-  profileLink.style.display = "block";
-  profileLink.setAttribute("href", userProfile.data.url);
-  profileLink.innerHTML = "Check out myAnimeList!";
-
   // get a recommendation of unread item from json server
   const recommendationSection = document.createElement("div");
   recommendationSection.classList.add("recommendation-section");
@@ -28,6 +17,8 @@ const createUserProfile = (userProfile) => {
 
   const recommendationButton = document.createElement("button");
   recommendationButton.innerHTML = "Get Series";
+  recommendationButton.classList.add("recommendation-button");
+
   const getRecommendedMangaContainer = document.createElement("div");
 
   recommendationSection.appendChild(recommendationBlurb);
@@ -64,8 +55,6 @@ const createUserProfile = (userProfile) => {
   profileContainer.appendChild(welcomeBanner);
   profileContainer.appendChild(userProfileSection);
   profileContainer.appendChild(recommendationSection);
-  userProfileSection.appendChild(profilePicture);
-  userProfileSection.appendChild(profileLink);
 };
 
 // create card for search
@@ -214,6 +203,26 @@ const mangaLibrary = () => {
         cardWithMangaInfo.addEventListener("mouseout", () => {
           cardWithMangaInfo.classList.remove("manga-card-hover");
         });
+
+        // remove a card from library
+        const removeButton = document.createElement("button");
+        removeButton.innerHTML = "Remove Manga";
+        removeButton.classList.add("remove-button");
+        cardWithMangaInfo.appendChild(removeButton);
+
+        removeButton.addEventListener("click", () => {
+          fetch(`http://localhost:3000/manga/${mangaResult.id}`, {
+            method: "DELETE",
+            headers: {
+              "Content-type": "application/json",
+            },
+          })
+            .then((response) => response.json())
+            .then((json) => {
+              cardWithMangaInfo.remove();
+              console.log(json);
+            });
+        });
       });
     });
 };
@@ -252,13 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const searchBarInput = document.getElementById("search-bar");
 
-  //   get user profile
-  fetch(`https://api.jikan.moe/v4/users/kiriviri/full`)
-    .then((response) => response.json())
-    .then((json) => {
-      createUserProfile(json);
-    });
-
   // add new manga search results
   searchBarSubmitButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -270,6 +272,9 @@ document.addEventListener("DOMContentLoaded", () => {
         renderSearchResults();
       });
   });
+
+  //header section
+  createUserProfile();
 
   //toggle behavior for tabs
   tabToggle();

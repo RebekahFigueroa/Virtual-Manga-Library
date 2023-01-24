@@ -24,6 +24,26 @@
 
 .recommendation-section {
   grid-area: recommendation;
+  height: 550px;
+}
+
+.recommendation-button {
+  border-radius: 12px;
+  background-color: #ffefef;
+  border: 1px solid #ffefef;
+  color: #7c99ac;
+  font-weight: 400;
+  padding: 15px 32px;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  width: 25%;
+  align-items: center;
+}
+
+.recommendation-button:hover {
+  cursor: pointer;
 }
 
 /* Tabs */
@@ -74,6 +94,27 @@
   top: 0;
   background-color: #ffefef;
   color: #7c99ac;
+}
+
+.remove-button {
+  float: bottom;
+  border-radius: 12px;
+  background-color: #7c99ac;
+  border: 1px solid #7c99ac;
+  color: #ffefef;
+  padding: 15px 32px;
+  margin-top: 2rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.remove-button:hover {
+  background-color: #92a9bd;
+  border: 1px solid #92a9bd;
+  color: black;
+  cursor: pointer;
 }
 
 /* search bar */
