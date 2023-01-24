@@ -100,7 +100,7 @@ const renderSearchResults = () => {
           themes: searchResult.themes.map((theme) => theme.name),
           synopsis: searchResult.synopsis,
           volumesLibrary: null,
-          readStatus: null,
+          readStatus: false,
           libraryScore: null,
         }),
         headers: {

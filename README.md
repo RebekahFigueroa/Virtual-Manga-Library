@@ -51,10 +51,7 @@ json-server:
 
 ## Future Roadmap
 
-1. Ability to add personal score, number of manga in series, and if I have read
-
-- Currently have to update database manually
-
+1. Ability to add personal score, number of manga in series, and if I have read (Currently have to update database manually)
 2. Add statistics for library such as top genre or average score
 3. Convert genres into chips
 4. Add library filtering
