@@ -1,6 +1,6 @@
 // helper functions
 
-//pull user profile
+//pull user's profile
 const createUserProfile = () => {
   const profileContainer = document.getElementById("user-profile-container");
   profileContainer.innerHTML = "";
