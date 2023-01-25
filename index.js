@@ -298,6 +298,40 @@ const mangaLibrary = () => {
           '<span style="font-weight:700;">Genres:</span> ' +
           mangaResult.genres.join(", ");
 
+        // add personal scores/ details
+        const mangaPersonalDetailsContainer = document.createElement("div");
+        mangaPersonalDetailsContainer.classList.add(
+          "manga-personal-details-container"
+        );
+
+        const mangaNumberOfVolumesTitle = document.createElement("div");
+        mangaNumberOfVolumesTitle.classList.add(
+          "manga-personal-details-title-volumes"
+        );
+        mangaNumberOfVolumesTitle.innerHTML = "Volumes";
+
+        const mangaNumberOfVolumes = document.createElement("div");
+        mangaNumberOfVolumes.classList.add(
+          "manga-personal-details-data-volumes"
+        );
+        mangaNumberOfVolumes.innerHTML = mangaResult.volumesLibrary;
+
+        const mangaReadStatusTitle = document.createElement("div");
+        mangaReadStatusTitle.classList.add("manga-personal-details-title-read");
+        mangaReadStatusTitle.innerHTML = "Read";
+
+        const mangaReadStatus = document.createElement("div");
+        mangaReadStatus.classList.add("manga-personal-details-data-read");
+        mangaReadStatus.innerHTML = mangaResult.readStatus;
+
+        const mangaScoreTitle = document.createElement("div");
+        mangaScoreTitle.classList.add("manga-personal-details-title-score");
+        mangaScoreTitle.innerHTML = "Score";
+
+        const mangaScore = document.createElement("div");
+        mangaScore.classList.add("manga-personal-details-data-score");
+        mangaScore.innerHTML = mangaResult.libraryScore;
+
         //Append to card + card container
         mangaLibraryContainer.appendChild(cardWithMangaInfo);
         cardWithMangaInfo.appendChild(mangaImg);
@@ -308,6 +342,13 @@ const mangaLibrary = () => {
         cardWithMangaInfo.appendChild(mangaThemes);
         cardWithMangaInfo.appendChild(mangaDemographics);
         cardWithMangaInfo.appendChild(mangaGenres);
+        cardWithMangaInfo.appendChild(mangaPersonalDetailsContainer);
+        mangaPersonalDetailsContainer.appendChild(mangaNumberOfVolumesTitle);
+        mangaPersonalDetailsContainer.appendChild(mangaNumberOfVolumes);
+        mangaPersonalDetailsContainer.appendChild(mangaReadStatusTitle);
+        mangaPersonalDetailsContainer.appendChild(mangaReadStatus);
+        mangaPersonalDetailsContainer.appendChild(mangaScoreTitle);
+        mangaPersonalDetailsContainer.appendChild(mangaScore);
 
         //add hover effect
         cardWithMangaInfo.addEventListener("mouseover", () => {

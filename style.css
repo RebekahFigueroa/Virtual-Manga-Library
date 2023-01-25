@@ -219,6 +219,61 @@
   cursor: pointer;
 }
 
+.manga-personal-details-container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-rows: 2rem 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "header1 header2 header3"
+    "fact1 fact2 fact3";
+}
+
+.manga-personal-details-title-volumes {
+  grid-area: header1;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.manga-personal-details-data-volumes {
+  grid-area: fact1;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.manga-personal-details-title-read {
+  grid-area: header2;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.manga-personal-details-data-read {
+  grid-area: fact2;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.manga-personal-details-title-score {
+  grid-area: header3;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.manga-personal-details-data-score {
+  grid-area: fact3;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+}
+
 /* search bar */
 #search-content-container {
   display: none;
