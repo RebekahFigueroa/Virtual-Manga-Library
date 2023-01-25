@@ -33,6 +33,8 @@ json-server:
 
 ## Demo
 
+https://user-images.githubusercontent.com/104795396/214715942-cf5164e9-9c8c-4f44-be88-e1a8a7ab62ab.mov
+
 ## Features (with examples)
 
 1. Recommend a series in the library that you have not read yet (found in header section)
