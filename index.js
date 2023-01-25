@@ -18,7 +18,7 @@ const createUserProfile = () => {
 
   const userProfileMangaCount = document.createElement("div");
   userProfileMangaCount.classList.add("user-profile-manga-count");
-  userProfileMangaCount.innerHTML = "How many manga are in the library?";
+  userProfileMangaCount.innerHTML = "How many manga series are in the library?";
   fetch(" http://localhost:3000/manga")
     .then((response) => response.json())
     .then((mangas) => {
@@ -94,16 +94,17 @@ const createUserProfile = () => {
   fetch(" http://localhost:3000/manga")
     .then((response) => response.json())
     .then((mangas) => {
-      const mangaHaveRead = mangas.filter(
-        (manga) => manga.readStatus === true
-      ).length;
+      const totalVolumesOwned = mangas.reduce(
+        (totalVolumesOwned, manga) => manga.volumesLibrary + totalVolumesOwned,
+        0
+      );
 
-      const mangaHaveNotRead = mangas.filter(
-        (manga) => manga.readStatus === false
-      ).length;
+      const totalVolumesRead = mangas.reduce(
+        (totalVolumesRead, manga) => manga.readStatus + totalVolumesRead,
+        0
+      );
 
-      const percentOfLibraryRead =
-        mangaHaveRead / (mangaHaveRead + mangaHaveNotRead);
+      const percentOfLibraryRead = totalVolumesRead / totalVolumesOwned;
       const divPercentOfLibraryRead = document.createElement("div");
       divPercentOfLibraryRead.classList.add("stats-cards");
       divPercentOfLibraryRead.innerHTML =
@@ -142,7 +143,9 @@ const createUserProfile = () => {
     fetch("http://localhost:3000/manga")
       .then((response) => response.json())
       .then((json) => {
-        const unreadMangas = json.filter((manga) => manga.readStatus === false);
+        const unreadMangas = json.filter(
+          (manga) => manga.readStatus !== manga.volumesLibrary
+        );
         // if there are any unreadMangas - recommend a randomone
         // else display "you've read everything"
         // randomMangaLibraryPick = [Math.floor(Math.random() * json.length)];

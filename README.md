@@ -1,6 +1,6 @@
 # Virtual Manga Library
 
-This is a simple way to virtually track the growing collection of physical manga I have on my shelf. It is a digital library that pulls information from myAnimeList using the API Jikan to easily search and store content. The goal is to make
+This is a simple way to virtually track the growing collection of physical manga I have on my shelf. It is a digital library that pulls information from myAnimeList using the Jikan API to easily search and store content. The goal is to make the library convenient and easy to navigate so I always know what my library looks like.
 
 ## Why?
 
@@ -26,7 +26,7 @@ Currently under development.
 
 json-server:
 
-1. Install JSON server as a NPM package
+1. Install JSON server as an NPM package
    > $ npm install -g json-server
 2. Run JSON server
    > json-server --watch db.json
@@ -37,25 +37,34 @@ json-server:
 
 1. Recommend a series in the library that you have not read yet (found in header section)
    -reclick button to get new recommendation
-2. Toggle between the manga library and the add to library section
-3. Manga library
+2. View stats about your library:
+
+- total manga series
+- % of total that is manga vs light novel
+- favorite genre
+- % of library read
+
+3. Toggle between the manga library and the add to library section
+4. Manga library
 
 - view all manga in library (need to have local json server open to view cards)
 - cards display details about manga series
 - Button to remove series if wrong manga was added
 
-4. Search for manga to add to library
+5. Search for manga to add to library
 
 - Use search bar to type in a series name
 - Select Add to Library button if you would like to add series to library
 
 ## Future Roadmap
 
-1.  Ability to add personal score, number of manga in series, and if I have read (Currently have to update database manually)
+(in no particular order)
+
+1.  Ability to add personal score, number of manga in series, and if I have read
 2.  ~~Add statistics for library such as top genre or average score~~
-3.  Convert genres into chips
+3.  Convert genres into visual chips
 4.  Add library filtering
 5.  Add a way to access from anywhere (not just when local db is running)
-6.  Add interactive star rating to replace numerical system
-7.  Add card flip to view synopsis
-8.  Add a wishlist section
+6.  Add card flip to view synopsis
+7.  Add a wishlist section
+8.  Ability to search library
