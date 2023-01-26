@@ -70,3 +70,9 @@ https://user-images.githubusercontent.com/104795396/214715942-cf5164e9-9c8c-4f44
 6.  Add card flip to view synopsis
 7.  Add a wishlist section
 8.  Ability to search library
+
+## Supplemental links
+
+- PRD for project: Runs through my general thought process and brain storming for the virtual manga shelf (https://pickled-dietician-00e.notion.site/Virtual-Manga-Library-c5978c5742854d42a43b0c3279728897)
+
+- What I learned about APIs from this project and all the mistakes I made along the way! (https://medium.com/@figueroarebekah/a-beginners-guide-to-apis-15fdf8fc48a1)
