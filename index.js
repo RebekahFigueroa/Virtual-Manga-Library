@@ -30,23 +30,40 @@ const createUserProfile = () => {
 
   const userProfileMangaType = document.createElement("div");
   userProfileMangaType.classList.add("user-profile-manga-type");
-  userProfileMangaType.innerHTML = "What % of my library is manga?";
+  userProfileMangaType.innerHTML = "What is my favorite manga type?";
   fetch(" http://localhost:3000/manga")
     .then((response) => response.json())
     .then((mangas) => {
-      const mangaCount = mangas.filter(
-        (manga) => manga.type === "Manga"
-      ).length;
+      const demographicCounts = {};
 
-      const lightNovelCount = mangas.filter(
-        (manga) => manga.type === "Light Novel"
-      ).length;
+      mangas.forEach((manga) =>
+        manga.demographic.forEach((demo) => {
+          demographicCounts[demo] = (demographicCounts[demo] ?? 0) + 1;
+        })
+      );
 
-      const percentOfManga = mangaCount / (mangaCount + lightNovelCount);
-      const mangaType = document.createElement("div");
-      mangaType.innerHTML = percentOfManga.toFixed(2) * 100 + "%";
-      mangaType.classList.add("stats-cards");
-      userProfileMangaType.appendChild(mangaType);
+      const demographicSorted = Object.keys(demographicCounts).sort(
+        (a, b) => demographicCounts[b] - demographicCounts[a]
+      );
+
+      const topDemographic = demographicSorted.slice(0, 1);
+      const secondDemographic = demographicSorted.slice(1, 2);
+      const thirdDemographic = demographicSorted.slice(2, 3);
+
+      const mangaDemographicNumberTop = document.createElement("div");
+      mangaDemographicNumberTop.classList.add("stats-cards-genres");
+      mangaDemographicNumberTop.innerHTML = "1st - " + topDemographic;
+      userProfileMangaType.appendChild(mangaDemographicNumberTop);
+
+      const mangaDemographicNumberSecond = document.createElement("div");
+      mangaDemographicNumberSecond.classList.add("stats-cards-genres");
+      mangaDemographicNumberSecond.innerHTML = "2nd - " + secondDemographic;
+      userProfileMangaType.appendChild(mangaDemographicNumberSecond);
+
+      const mangaDemographicNumberThird = document.createElement("div");
+      mangaDemographicNumberThird.classList.add("stats-cards-genres");
+      mangaDemographicNumberThird.innerHTML = "3rd - " + thirdDemographic;
+      userProfileMangaType.appendChild(mangaDemographicNumberThird);
     });
 
   const userProfileFavoriteGenre = document.createElement("div");
