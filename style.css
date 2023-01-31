@@ -219,6 +219,10 @@
   color: #7c99ac;
 }
 
+.is-hidden {
+  display: none !important;
+}
+
 .manga-library-image {
   width: 100%;
 }

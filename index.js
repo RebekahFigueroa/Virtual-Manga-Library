@@ -265,13 +265,37 @@ const renderSearchResults = () => {
   });
 };
 
-//createing sort methods (add rest)
+//creating sort methods for library dropdown
 const sortMethods = {
   id: (mangaResult1, mangaResult2) => mangaResult1.id - mangaResult2.id,
   alphabetical: (mangaResult1, mangaResult2) =>
     mangaResult1.titleEnglish.localeCompare(mangaResult2.titleEnglish),
   score: (mangaResult1, mangaResult2) =>
     mangaResult2.libraryScore - mangaResult1.libraryScore,
+};
+
+// add seach logic for library
+
+const searchLibraryLogic = (searchInput) => {
+  // Locate the card elements
+  const mangaCards = document.querySelectorAll(".manga-library-card");
+
+  // Loop through the cards
+  for (var i = 0; i < mangaCards.length; i++) {
+    // If the text is within the card...
+    if (
+      mangaCards[i].innerText
+        .toLowerCase()
+        // ...and the text matches the search query...
+        .includes(searchInput.toLowerCase())
+    ) {
+      // ...remove the `.is-hidden` class.
+      mangaCards[i].classList.remove("is-hidden");
+    } else {
+      // Otherwise, add the class.
+      mangaCards[i].classList.add("is-hidden");
+    }
+  }
 };
 
 //create cards for library
@@ -415,17 +439,26 @@ const renderLibraryCards = (sortMethod) => {
 
 // Adds sorting to library
 const mangaLibrary = () => {
-  //default behavior
+  //default sort behavior for dropdown
   renderLibraryCards("id");
 
   const mangaLibraryDropdown = document.getElementById(
     "manga-library-sort-dropdown"
   );
 
-  // selects new sorting behavior
+  // selects new sorting behavior for dropdown
   mangaLibraryDropdown.addEventListener("change", (event) => {
     renderLibraryCards(event.target.value);
   });
+
+  const librarySearchInput = document.getElementById(
+    "manga-library-search-bar"
+  );
+
+  // adds sorting behavior for search bar
+  librarySearchInput.addEventListener("change", (event) =>
+    searchLibraryLogic(event.target.value)
+  );
 };
 
 // tab toggling
