@@ -171,13 +171,52 @@
 }
 
 /* manga card container */
-#manga-library-container {
+#manga-library-card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   row-gap: 1rem;
   column-gap: 2rem;
   padding: 2rem 3rem;
   background-color: #7c99ac;
+}
+
+#manga-library-sorting-container {
+  background-color: #7c99ac;
+  align-items: center;
+  height: 4rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 3rem;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "search-bar search-bar search-bar dropdown";
+}
+
+.manga-library-search-bar {
+  grid-area: search-bar;
+  margin: auto;
+}
+
+#manga-library-search-bar {
+  position: relative;
+  width: 40rem;
+  height: 2.5rem;
+  background-color: #ffefef;
+  border: none;
+  border-radius: 5rem;
+}
+
+#manga-library-sort-dropdown {
+  grid-area: dropdown;
+  margin: auto;
+  position: relative;
+  width: 15rem;
+  height: 2.5rem;
+  background-color: #ffefef;
+  border: none;
+  border-radius: 5rem;
+  font-size: 18px;
+  padding-left: 1rem;
+  color: #7c99ac;
 }
 
 .manga-library-image {

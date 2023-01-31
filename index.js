@@ -267,10 +267,10 @@ const renderSearchResults = () => {
 
 //create cards for library
 const mangaLibrary = () => {
-  const mangaLibraryContainer = document.getElementById(
-    "manga-library-container"
+  const mangaLibraryCardContainer = document.getElementById(
+    "manga-library-card-container"
   );
-  mangaLibraryContainer.innerHTML = "";
+  mangaLibraryCardContainer.innerHTML = "";
   //get manga library server from json server
   fetch(`http://localhost:3000/manga`)
     .then((response) => response.json())
@@ -353,7 +353,7 @@ const mangaLibrary = () => {
         mangaScore.innerHTML = mangaResult.libraryScore;
 
         //Append to card + card container
-        mangaLibraryContainer.appendChild(cardWithMangaInfo);
+        mangaLibraryCardContainer.appendChild(cardWithMangaInfo);
         cardWithMangaInfo.appendChild(mangaImg);
         cardWithMangaInfo.appendChild(mangaTitle);
         cardWithMangaInfo.appendChild(mangaAuthors);
