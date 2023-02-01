@@ -52,6 +52,8 @@ https://user-images.githubusercontent.com/104795396/214715942-cf5164e9-9c8c-4f44
 - view all manga in library (need to have local json server open to view cards)
 - cards display details about manga series
 - Button to remove series if wrong manga was added
+- Ability to search for a manga in the library by key word search
+- Ability to filter library by Alphabetical, ID, Score, and Publish Date
 
 5. Search for manga to add to library
 
@@ -65,11 +67,11 @@ https://user-images.githubusercontent.com/104795396/214715942-cf5164e9-9c8c-4f44
 1.  Ability to add personal score, number of manga in series, and if I have read
 2.  ~~Add statistics for library such as top genre or average score~~
 3.  Convert genres into visual chips
-4.  Add library filtering
+4.  ~~Add library filtering~~
 5.  Add a way to access from anywhere (not just when local db is running)
 6.  Add card flip to view synopsis
 7.  Add a wishlist section
-8.  Ability to search library
+8.  ~~Ability to search library~~
 
 ## Supplemental links
 
