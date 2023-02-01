@@ -29,9 +29,6 @@ const getUnreadMangaRecommendation = () => {
         const unreadMangas = json.filter(
           (manga) => manga.readStatus !== manga.volumesLibrary
         );
-        // if there are any unreadMangas - recommend a randomone
-        // else display "you've read everything"
-        // randomMangaLibraryPick = [Math.floor(Math.random() * json.length)];
         if (unreadMangas.length !== 0) {
           const randomMangaLibraryPick =
             unreadMangas[Math.floor(Math.random() * unreadMangas.length)];
@@ -272,22 +269,15 @@ const sortMethods = {
 
 // add search bar logic for library
 const searchLibraryLogic = (searchInput) => {
-  // Locate the card elements
   const mangaCards = document.querySelectorAll(".manga-library-card");
 
-  // Loop through the cards
+  // Loop through each card to find if text input is within card
   for (var i = 0; i < mangaCards.length; i++) {
-    // If the text is within the card...
     if (
-      mangaCards[i].innerText
-        .toLowerCase()
-        // ...and the text matches the search query...
-        .includes(searchInput.toLowerCase())
+      mangaCards[i].innerText.toLowerCase().includes(searchInput.toLowerCase())
     ) {
-      // ...remove the `.is-hidden` class.
       mangaCards[i].classList.remove("is-hidden");
     } else {
-      // Otherwise, add the class.
       mangaCards[i].classList.add("is-hidden");
     }
   }
@@ -508,7 +498,7 @@ const createSearchCards = () => {
           themes: searchResult.themes.map((theme) => theme.name),
           synopsis: searchResult.synopsis,
           volumesLibrary: null,
-          readStatus: false,
+          readStatus: null,
           libraryScore: null,
         }),
         headers: {
