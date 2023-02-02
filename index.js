@@ -60,7 +60,7 @@ const calculateMangaCount = () => {
     .then((mangas) => {
       const mangaCountNumber = document.createElement("div");
       mangaCountNumber.classList.add("stats-cards");
-      mangaCountNumber.innerHTML = Object.keys(mangas).length;
+      mangaCountNumber.innerHTML = mangas.length;
       userProfileMangaCount.appendChild(mangaCountNumber);
     });
   return userProfileMangaCount;
