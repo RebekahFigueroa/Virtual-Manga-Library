@@ -86,9 +86,9 @@ const calculateMangaDemographic = () => {
         (a, b) => demographicCounts[b] - demographicCounts[a]
       );
 
-      const topDemographic = demographicSorted.slice(0, 1);
-      const secondDemographic = demographicSorted.slice(1, 2);
-      const thirdDemographic = demographicSorted.slice(2, 3);
+      const topDemographic = demographicSorted[0];
+      const secondDemographic = demographicSorted[1];
+      const thirdDemographic = demographicSorted[2];
 
       const mangaDemographicNumberTop = document.createElement("div");
       mangaDemographicNumberTop.classList.add("stats-cards-genres");
@@ -128,9 +128,9 @@ const calculateMangaGenre = () => {
         (a, b) => genreCounts[b] - genreCounts[a]
       );
 
-      const topGenre = genresSorted.slice(0, 1);
-      const secondGenre = genresSorted.slice(1, 2);
-      const thirdGenre = genresSorted.slice(2, 3);
+      const topGenre = genresSorted[0];
+      const secondGenre = genresSorted[1];
+      const thirdGenre = genresSorted[2];
 
       const mangaGenreNumberTop = document.createElement("div");
       mangaGenreNumberTop.classList.add("stats-cards-genres");
@@ -362,7 +362,7 @@ const mangaLibraryCardCreation = (mangaResult) => {
   mangaNumberOfVolumesTitle.classList.add(
     "manga-personal-details-title-volumes"
   );
-  mangaNumberOfVolumesTitle.innerHTML = "Volumes";
+  mangaNumberOfVolumesTitle.innerHTML = "Owned";
 
   const mangaNumberOfVolumes = document.createElement("div");
   mangaNumberOfVolumes.classList.add("manga-personal-details-data-volumes");
@@ -455,6 +455,8 @@ const renderLibraryCards = (sortMethod) => {
 
 // #region ****** SEARCH CONTAINER- ADD RESULTS TO LIBRARY ****** //
 
+// store results of search API request (aka json.data) to allow toggle saving
+let searchResults = [];
 // create cards for search from Jikan api
 const createSearchCards = () => {
   const cardsContainer = document.getElementById("search-cards-container");
@@ -552,9 +554,6 @@ const renderSearchResultCards = () => {
 // #endregion
 
 // #region ****** DOM MANIPULATION ****** //
-
-// store results of search API request (aka json.data) to allow toggle saving
-let searchResults = [];
 
 // implment all functions/ implement to DOM here
 document.addEventListener("DOMContentLoaded", () => {
